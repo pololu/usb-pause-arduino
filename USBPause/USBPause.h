@@ -1,3 +1,13 @@
+// Copyright (C) Pololu Corporation - see LICENSE.txt for details.
+
+/*! \file USBPause.h
+ *
+ * This is the main file for the USBPause library.
+ *
+ * For an overview of this library, see
+ * https://github.com/pololu/usb-pause-arduino.  That is the main repository for
+ * this library, though copies may exist in other repositories. */
+
 #pragma once
 
 /*! This class disables USB interrupts in its constructor when it is created and
