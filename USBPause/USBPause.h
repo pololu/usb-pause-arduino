@@ -10,6 +10,8 @@
 
 #pragma once
 
+#include <avr/io.h>
+
 /*! This class disables USB interrupts in its constructor when it is created and
  *  restores them to their previous state in its destructor when it is
  *  destroyed.  This class is tailored to the behavior of the Arduino core USB
