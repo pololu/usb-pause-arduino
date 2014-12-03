@@ -23,8 +23,16 @@
  */
 class USBPause
 {
+    /// The saved value of the UDIEN register.
+    uint8_t savedUDIEN;
+
+    /// The saved value of the UENUM register.
+    uint8_t savedUENUM;
+
+    /// The saved value of the UEIENX register for endpoint 0.
+    uint8_t savedUEIENX0;
+
 public:
-    uint8_t savedUDIEN, savedUENUM, savedUEIENX;
 
     USBPause()
     {
@@ -39,7 +47,7 @@ public:
         UENUM = 0;
 
         // Disable endpoint 0 interrupts.
-        savedUEIENX = UEIENX;
+        savedUEIENX0 = UEIENX;
         UEIENX = 0;
     }
 
@@ -47,7 +55,7 @@ public:
     {
         // Restore endoint 0 interrupts.
         UENUM = 0;
-        UEIENX = savedUEIENX;
+        UEIENX = savedUEIENX0;
 
         // Restore endpoint selection.
         UENUM = savedUENUM;
