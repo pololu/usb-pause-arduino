@@ -55,7 +55,7 @@ public:
 
     ~USBPause()
     {
-        // Restore endoint 0 interrupts.
+        // Restore endpoint 0 interrupts.
         UENUM = 0;
         UEIENX = savedUEIENX0;
 
